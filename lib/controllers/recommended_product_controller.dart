@@ -1,15 +1,13 @@
 import 'package:foo_delivery/data/repository/recomended_product_repo.dart';
 import 'package:foo_delivery/model/product_model.dart';
-import 'package:get/get_connect.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get.dart';
 
 class RecommendedProductController extends GetxController {
   final RecommendedProductRepo recommendedProductRepo;
-
   RecommendedProductController({required this.recommendedProductRepo});
-
   List<ProductModel> _recommendedProductList = [];
   List<ProductModel> get recommendedProductList => _recommendedProductList;
+
   bool _isLoaded = false;
   bool get isLoaded => _isLoaded;
 

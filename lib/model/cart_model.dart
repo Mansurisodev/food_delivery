@@ -29,7 +29,7 @@ class CartModel {
     quantity = json['quantity'];
     isExit = json['isExit'];
     time = json['time'];
-    product = ProductModel.fromJson(json["product"]);
+    product = ProductModel.fromJson(json['product']);
   }
   Map<String, dynamic> toJson() {
     return {

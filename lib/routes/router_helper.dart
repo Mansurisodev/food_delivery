@@ -3,7 +3,7 @@ import 'package:foo_delivery/pages/food/popiular_food_detail.dart';
 import 'package:foo_delivery/pages/food/recomended_fodd_detail.dart';
 import 'package:foo_delivery/pages/home/home_page.dart';
 import 'package:foo_delivery/pages/splash/splash_page.dart';
-import 'package:get/route_manager.dart';
+import 'package:get/get.dart';
 
 class RouteHelper {
   static const String splashPage = "/splash-page";
@@ -22,27 +22,29 @@ class RouteHelper {
     GetPage(name: splashPage, page: () => SplashScreen()),
     GetPage(name: initial, page: () => HomePage()),
     GetPage(
-        name: popularFood,
-        transition: Transition.fadeIn,
-        page: () {
-          var pageId = Get.parameters["pageId"];
-          var page = Get.parameters["page"];
-          return PopularFoodDetail(pageId: int.parse(pageId!), page: page!);
-        }),
+      name: popularFood,
+      page: () {
+        var pageId = Get.parameters['pageId'];
+        var page = Get.parameters['page'];
+        return PopularFoodDetail(pageId: int.parse(pageId!), page: page!);
+      },
+      transition: Transition.fadeIn,
+    ),
     GetPage(
-        name: recommendeFood,
-        transition: Transition.fadeIn,
-        page: () {
-          var pageId = Get.parameters["pageId"];
-          var page = Get.parameters["page"];
-          return RecomendFoodDetail(pageId: int.parse(pageId!), page: page!);
-        }),
+      name: recommendeFood,
+      page: () {
+        var pageId = Get.parameters['pageId'];
+        var page = Get.parameters['page'];
+        return RecomendFoodDetail(pageId: int.parse(pageId!), page: page!);
+      },
+      transition: Transition.fadeIn,
+    ),
     GetPage(
       name: cartPage,
-      transition: Transition.fadeIn,
       page: () {
         return CartPage();
       },
+      transition: Transition.fadeIn,
     ),
   ];
 }

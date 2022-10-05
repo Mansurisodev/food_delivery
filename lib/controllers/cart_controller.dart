@@ -3,9 +3,7 @@ import 'package:foo_delivery/data/repository/cart_repo.dart';
 import 'package:foo_delivery/model/cart_model.dart';
 import 'package:foo_delivery/model/product_model.dart';
 import 'package:foo_delivery/utils/colors.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/utils.dart';
+import 'package:get/get.dart';
 
 class CartController extends GetxController {
   final CartRepo cartRepo;
@@ -62,9 +60,8 @@ class CartController extends GetxController {
   bool existInCart(ProductModel product) {
     if (_items.containsKey(product.id)) {
       return true;
-    } else {
-      return false;
     }
+    return false;
   }
 
   int getQuentity(ProductModel product) {
@@ -108,7 +105,7 @@ class CartController extends GetxController {
 
   set setCart(List<CartModel> items) {
     storageItems = items;
-    print("Length of cart item " + storageItems.length.toString());
+    // print("Length of cart item " + storageItems.length.toString());
     for (int i = 0; i < storageItems.length; i++) {
       _items.putIfAbsent(storageItems[i].product!.id!, () => storageItems[i]);
     }
@@ -121,6 +118,20 @@ class CartController extends GetxController {
 
   void clear() {
     _items = {};
+    update();
+  }
+
+  List<CartModel> getCartHistoryList() {
+    return cartRepo.getCartHistoryList();
+  }
+
+  set setItems(Map<int, CartModel> setItems) {
+    _items = {};
+    _items = setItems;
+  }
+
+  void addToCartList() {
+    cartRepo.addToCartLIst(getItems);
     update();
   }
 }
