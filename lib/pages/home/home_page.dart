@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:foo_delivery/pages/account/account_page.dart';
+import 'package:foo_delivery/pages/auth/sign_up_page.dart';
 import 'package:foo_delivery/pages/cart/cart_history.dart';
 import 'package:foo_delivery/pages/home/main_food_page.dart';
 import 'package:foo_delivery/utils/colors.dart';
@@ -15,9 +17,9 @@ class _HomePageState extends State<HomePage> {
 
   List pages = [
     MainFoodPage(),
-    Container(child: Center(child: Text("Newt page"))),
+    SigUpPage(),
     CartHistory(),
-    Container(child: Center(child: Text("Newt next next page"))),
+    AccountPage(),
   ];
   void onTapNav(int index) {
     setState(() {
@@ -38,7 +40,7 @@ class _HomePageState extends State<HomePage> {
         selectedFontSize: 0.0,
         unselectedFontSize: 0.0,
         onTap: onTapNav,
-        items: [
+        items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: "home"),
           BottomNavigationBarItem(icon: Icon(Icons.archive), label: "history"),
           BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "cart"),
