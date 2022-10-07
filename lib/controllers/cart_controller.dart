@@ -134,4 +134,9 @@ class CartController extends GetxController {
     cartRepo.addToCartLIst(getItems);
     update();
   }
+
+  void clearCartHistory() {
+    cartRepo.clearCartHistory();
+    update();
+  }
 }

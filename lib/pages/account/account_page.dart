@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:foo_delivery/controllers/cart_controller.dart';
+import 'package:foo_delivery/controllers/auth_controller.dart';
+import 'package:foo_delivery/routes/router_helper.dart';
 import 'package:foo_delivery/utils/colors.dart';
 import 'package:foo_delivery/utils/dimensions.dart';
 import 'package:foo_delivery/widgets/account_widget.dart';
 import 'package:foo_delivery/widgets/app_icon.dart';
 import 'package:foo_delivery/widgets/big_text.dart';
+import 'package:get/instance_manager.dart';
+import 'package:get/get.dart';
 
 class AccountPage extends StatelessWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -11,9 +16,9 @@ class AccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.grey[50],
       appBar: AppBar(
-        title: BigText(text: "Profile", size: 24),
+        title: BigText(text: "Profile", size: 24, color: Colors.white),
         backgroundColor: AppColors.mainColor,
       ),
       body: Container(
@@ -38,27 +43,15 @@ class AccountPage extends StatelessWidget {
                     AccountWidget(
                       appIcon: AppIcon(
                         icon: Icons.phone,
-                        backgroundColor: AppColors.mainColor,
-                        iconColor: Colors.white,
-                        IconSize: Dimensions.height10 * 5 / 2,
-                        size: Dimensions.height10 * 5,
-                      ),
-                      bigText: BigText(text: "Mansur"),
-                    ),
-                    SizedBox(height: Dimensions.height20),
-                    //phone
-                    AccountWidget(
-                      appIcon: AppIcon(
-                        icon: Icons.phone,
                         backgroundColor: AppColors.yellowColor,
                         iconColor: Colors.white,
                         IconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "+99 899 325 30 01"),
+                      bigText: BigText(text: "+ 99 899 325 30 01"),
                     ),
                     SizedBox(height: Dimensions.height20),
-                    //email
+                    //phone
                     AccountWidget(
                       appIcon: AppIcon(
                         icon: Icons.email,
@@ -67,10 +60,10 @@ class AccountPage extends StatelessWidget {
                         IconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "mansurios@gmail.com"),
+                      bigText: BigText(text: "mansuriosdevm1@gmail.com"),
                     ),
                     SizedBox(height: Dimensions.height20),
-                    //adress
+                    //email
                     AccountWidget(
                       appIcon: AppIcon(
                         icon: Icons.location_on,
@@ -79,10 +72,10 @@ class AccountPage extends StatelessWidget {
                         IconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "Fill in your adres"),
+                      bigText: BigText(text: "Fill in your address"),
                     ),
                     SizedBox(height: Dimensions.height20),
-                    //message
+                    //adress
                     AccountWidget(
                       appIcon: AppIcon(
                         icon: Icons.message,
@@ -91,7 +84,31 @@ class AccountPage extends StatelessWidget {
                         IconSize: Dimensions.height10 * 5 / 2,
                         size: Dimensions.height10 * 5,
                       ),
-                      bigText: BigText(text: "Mansur"),
+                      bigText: BigText(text: "Message"),
+                    ),
+                    SizedBox(height: Dimensions.height20),
+                    //message
+                    GestureDetector(
+                      onTap: () {
+                        if (Get.find<AuthController>().userLoggedIn()) {
+                          Get.find<AuthController>().clearSharedDate();
+                          Get.find<CartController>().clear();
+                          Get.find<CartController>().clearCartHistory();
+                          Get.offNamed(RouteHelper.getsigInPage());
+                        } else {
+                          print("You logged out");
+                        }
+                      },
+                      child: AccountWidget(
+                        appIcon: AppIcon(
+                          icon: Icons.logout,
+                          backgroundColor: Colors.redAccent,
+                          iconColor: Colors.white,
+                          IconSize: Dimensions.height10 * 5 / 2,
+                          size: Dimensions.height10 * 5,
+                        ),
+                        bigText: BigText(text: "Log Out"),
+                      ),
                     ),
                     SizedBox(height: Dimensions.height20),
                   ],

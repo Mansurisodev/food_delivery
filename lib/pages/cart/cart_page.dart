@@ -3,6 +3,7 @@ import 'package:foo_delivery/base/no_data_pages.dart';
 import 'package:foo_delivery/controllers/cart_controller.dart';
 import 'package:foo_delivery/controllers/popular_product_controller.dart';
 import 'package:foo_delivery/controllers/recommended_product_controller.dart';
+import 'package:foo_delivery/controllers/auth_controller.dart';
 import 'package:foo_delivery/routes/router_helper.dart';
 import 'package:foo_delivery/utils/app_constants.dart';
 import 'package:foo_delivery/utils/colors.dart';
@@ -183,8 +184,13 @@ class CartPage extends StatelessWidget {
                     GestureDetector(
                       onTap: () {
                         // popularProduct.addItem(product);
-                        cartController.addToHistory();
-                        print("tapped");
+
+                        if (Get.find<AuthController>().userLoggedIn()) {
+                          print("tapped");
+                          cartController.addToHistory();
+                        } else {
+                          Get.toNamed(RouteHelper.getsigInPage());
+                        }
                       },
                       child: Container(
                         padding: EdgeInsets.only(top: Dimensions.height20, bottom: Dimensions.height20, right: Dimensions.height20, left: Dimensions.height20),

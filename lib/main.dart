@@ -4,6 +4,7 @@ import 'package:foo_delivery/controllers/popular_product_controller.dart';
 import 'package:foo_delivery/controllers/recommended_product_controller.dart';
 import 'package:foo_delivery/pages/auth/sign_in_page.dart';
 import 'package:foo_delivery/pages/auth/sign_up_page.dart';
+import 'package:foo_delivery/pages/home/home_page.dart';
 import 'package:foo_delivery/routes/router_helper.dart';
 import 'package:get/get.dart';
 import 'helper/dependeccies.dart' as dep;
@@ -19,17 +20,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.find<CartController>().getCartData();
+    // Get.find<CartController>().getCartData();
     return GetBuilder<PopularProductController>(builder: (_) {
       return GetBuilder<RecommendedProductController>(builder: (_) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: "Flutter Demo",
-          home: SignInPage(),
+          home: HomePage(),
           // initialRoute: RouteHelper.getInitial(),
           // home: SplashScreen(),
-          // // initialRoute: RouteHelper.getSplashPage(),
-          // getPages: RouteHelper.routes,
+          initialRoute: RouteHelper.getSplashPage(),
+          getPages: RouteHelper.routes,
         );
       });
     });
