@@ -4,6 +4,7 @@ import 'package:foo_delivery/base/custom_loader.dart';
 import 'package:foo_delivery/base/show_custom_snack_bar.dart';
 import 'package:foo_delivery/model/signup_body_model.dart';
 import 'package:foo_delivery/controllers/auth_controller.dart';
+import 'package:foo_delivery/routes/router_helper.dart';
 import 'package:foo_delivery/utils/colors.dart';
 import 'package:foo_delivery/utils/dimensions.dart';
 import 'package:foo_delivery/widgets/app_text_filed.dart';
@@ -52,7 +53,10 @@ class SigUpPage extends StatelessWidget {
           password: password,
         );
         authController.registration(signUpBody).then((status) {
-          if (status.isSuccess) {
+          if (!status.isSuccess) {
+            // Get.toNamed(RouteHelper.getInitial());
+            Get.offNamed(RouteHelper.getInitial());
+
             print("Succes registration");
           } else {
             showCustomSnackBar(status.message);
