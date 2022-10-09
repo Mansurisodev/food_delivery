@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:foo_delivery/base/no_data_pages.dart';
 import 'package:foo_delivery/controllers/cart_controller.dart';
+import 'package:foo_delivery/controllers/location_controller.dart';
 import 'package:foo_delivery/controllers/popular_product_controller.dart';
 import 'package:foo_delivery/controllers/recommended_product_controller.dart';
 import 'package:foo_delivery/controllers/auth_controller.dart';
@@ -185,9 +186,12 @@ class CartPage extends StatelessWidget {
                       onTap: () {
                         // popularProduct.addItem(product);
 
-                        if (Get.find<AuthController>().userLoggedIn()) {
+                        if (!Get.find<AuthController>().userLoggedIn()) {
                           print("tapped");
-                          cartController.addToHistory();
+                          // cartController.addToHistory();
+                          if (Get.find<LocationController>().addressList.isEmpty) {
+                            Get.toNamed(RouteHelper.getAddresssPage());
+                          }
                         } else {
                           Get.toNamed(RouteHelper.getsigInPage());
                         }

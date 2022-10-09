@@ -16,25 +16,26 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var emialController = TextEditingController();
+    var phoneController = TextEditingController();
     var passwordController = TextEditingController();
     void _login(AuthController authController) {
       // var authController = Get.find<AuthController>();
-      String email = emialController.text.trim();
+      String phone = phoneController.text.trim();
       String password = passwordController.text.trim();
-      if (email.isEmpty) {
+      if (phone.isEmpty) {
         showCustomSnackBar("Type in your email adress", title: "Email adress");
-      } else if (!GetUtils.isEmail(email)) {
+      } else if (!GetUtils.isEmail(phone)) {
         showCustomSnackBar("Type in a valid email adress", title: "Valid email adress");
       } else if (password.isEmpty) {
         showCustomSnackBar("Type in your password", title: "password");
       } else if (password.length < 6) {
         showCustomSnackBar("Password can not be less than six characters", title: "Password");
       } else {
-        authController.login(email, password).then((status) {
+        authController.login(phone, password).then((status) {
           if (!status.isSuccess) {
             Get.toNamed(RouteHelper.getInitial());
             // Get.toNamed(RouteHelper.getCartPage());
+            // Get.offAllNamed(RouteHelper.getInitial());
             print("Succes registration");
           } else {
             showCustomSnackBar(status.message);
@@ -79,7 +80,7 @@ class SignInPage extends StatelessWidget {
                         ),
                         SizedBox(height: Dimensions.screenHeight * 0.05),
                         //email
-                        AppTextFiled(textEditingController: emialController, hintText: "Email", icon: Icons.email),
+                        AppTextFiled(textEditingController: phoneController, hintText: "Email", icon: Icons.email),
                         SizedBox(height: Dimensions.height20),
                         //password
                         AppTextFiled(textEditingController: passwordController, hintText: "Password", icon: Icons.password, isObscure: true),
