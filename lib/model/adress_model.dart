@@ -22,6 +22,7 @@ class AddressModel {
     _contacktPersonNumer = contacktPersonNumer;
     _longitude = longitude;
     _latitude = latitude;
+    _address = address;
   }
   String get address => _address;
   String get addressType => _addressType;

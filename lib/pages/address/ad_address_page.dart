@@ -3,6 +3,7 @@ import 'package:foo_delivery/controllers/auth_controller.dart';
 import 'package:foo_delivery/controllers/location_controller.dart';
 import 'package:foo_delivery/controllers/user_controller.dart';
 import 'package:foo_delivery/model/adress_model.dart';
+import 'package:foo_delivery/routes/router_helper.dart';
 import 'package:foo_delivery/utils/colors.dart';
 import 'package:foo_delivery/utils/dimensions.dart';
 import 'package:foo_delivery/widgets/app_icon.dart';
@@ -39,11 +40,11 @@ class _AddAddressPageState extends State<AddAddressPage> {
       _cameraPosition = CameraPosition(
           target: LatLng(
         double.parse(Get.find<LocationController>().getAddress["latitude"]),
-        double.parse(Get.find<LocationController>().getAddress["langitude"]),
+        double.parse(Get.find<LocationController>().getAddress["longitude"]),
       ));
       _initialPostion = LatLng(
         double.parse(Get.find<LocationController>().getAddress["latitude"]),
-        double.parse(Get.find<LocationController>().getAddress["langitude"]),
+        double.parse(Get.find<LocationController>().getAddress["longitude"]),
       );
     }
   }
@@ -95,6 +96,7 @@ class _AddAddressPageState extends State<AddAddressPage> {
                                     compassEnabled: false,
                                     indoorViewEnabled: true,
                                     mapToolbarEnabled: false,
+                                    myLocationButtonEnabled: true,
                                     onCameraIdle: () {
                                       locationController.updatePosition(_cameraPosition, true);
                                     },
@@ -199,7 +201,8 @@ class _AddAddressPageState extends State<AddAddressPage> {
                         );
                         locationController.addAddress(_addressModel).then((response) {
                           if (response.isSuccess) {
-                            Get.back();
+                            // Get.back();
+                            Get.toNamed(RouteHelper.getInitial());
                             Get.snackbar("Addres", "Added Successfully");
                           } else {
                             Get.snackbar("Addres", "Couldn't save address");
