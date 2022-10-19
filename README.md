@@ -1,31 +1,22 @@
-# foo_delivery
+ 
+# Project Title
+Flutter Food Delivery App | Shopping | E-commerce for iOS and Android
+Flutter Food Delivery App | E-commerce for iOS and Android | Shopping App With Backend & Restful Api
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-
-Copyright 2018 Pawan Kumar
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+1.E-commerce or shopping app includes the features
+2.Home page (shows popuplar product and recommended products)
+3.Sign in and Sign up (sign up with mobile)
+4.Shopping cart (a real shopping cart with add and remove items on the fly)
+5.Local cart history page (using a local storage)
+6.Server cart history page (sync with database)
+7.Profile page (personal information)
+8.Popular food page (view popular food, add or remove items from the cart)
+9.Recommended food page (view recommended food, add or remove from the cart)
+10.Order more function(newly added feature, it helps you order)
+11.Go to sign in page (sign in page authentication before you place order)
+12.Address page (address with authentication before you place order)
+13.Google map page (for picking up location and save address)
+14.Search address (search address or location for google map and save in the database.
+15.Backend (backend to show user info and order detail)
+16.Creating new items (backend you can create new items of food)
+17Paypal payment (Paypal payment sync with database)
