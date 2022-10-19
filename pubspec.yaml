@@ -45,6 +45,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.10.0
+
+flutter_icons:
+  android: true
+  iso: true
+  image_path: "assets/food_deliver_icon.png"
+  adapyive_icon_foreground: "assets/play_store_512.png"
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
