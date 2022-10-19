@@ -3,9 +3,9 @@
 Flutter Food Delivery App | Shopping | E-commerce for iOS and Android
 Flutter Food Delivery App | E-commerce for iOS and Android | Shopping App With Backend & Restful Api
 
-1.E-commerce or shopping app includes the features
-2.Home page (shows popuplar product and recommended products)
-3.Sign in and Sign up (sign up with mobile)
+1.E-commerce or shopping app includes the features.
+2.Home page (shows popuplar product and recommended products).
+3.Sign in and Sign up (sign up with mobile).
 4.Shopping cart (a real shopping cart with add and remove items on the fly)
 5.Local cart history page (using a local storage)
 6.Server cart history page (sync with database)
