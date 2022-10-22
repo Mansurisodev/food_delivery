@@ -21,7 +21,7 @@ Flutter Food Delivery App | E-commerce for iOS and Android | Shopping App With B
 16.Creating new items (backend you can create new items of food)
 17Paypal payment (Paypal payment sync with database)
 
-<img width="281" alt="Screenshot 2022-10-22 at 14 47 51" src="https://user-images.githubusercontent.com/105419465/197333069-fed35e4e-fd09-4c1c-a6a5-cb5cc71c173c.png,Screenshot 2022-10-22 at 14 48 10" src="https://user-images.githubusercontent.com/105419465/197333079-63ccc9c1-7f67-4a31-b3be-aad3906b9aca.png">
+<img width="281" alt="Screenshot 2022-10-22 at 14 47 51" src="https://user-images.githubusercontent.com/105419465/197333069-fed35e4e-fd09-4c1c-a6a5-cb5cc71c173c.png">
 <img width="281" alt="Screenshot 2022-10-22 at 14 48 10" src="https://user-images.githubusercontent.com/105419465/197333079-63ccc9c1-7f67-4a31-b3be-aad3906b9aca.png">,
 <img width="274" alt="Screenshot 2022-10-22 at 14 48 36" src="https://user-images.githubusercontent.com/105419465/197333081-a91c945d-be2d-47db-98fb-d23aa8e040db.png">
 <img width="274" alt="Screenshot 2022-10-22 at 14 48 50" src="https://user-images.githubusercontent.com/105419465/197333087-0e1bef23-907f-4179-9846-e20b0bafba51.png">
