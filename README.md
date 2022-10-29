@@ -22,6 +22,21 @@ Flutter Food Delivery App | E-commerce for iOS and Android | Shopping App With B
 17Paypal payment (Paypal payment sync with database)
 
 
+<br/>
+
+
+
+ <br/>
+
+## Screenshots
+
+
+![](https://github.com/Mansurisodev/office_store_getX/blob/origin/screenshots/office_furniture_store_app.jpg?raw=true)|![](https://github.com/Mansurisodev/office_store_getX/blob/origin/screenshots/office_furniture_list_screen.png?raw=true)|![](https://github.com/Mansurisodev/office_store_getX/blob/origin/screenshots/office_furniture_detail_screen.png?raw=true)|![](https://github.com/Mansurisodev/office_store_getX/blob/origin/screenshots/cart_screen.png?raw=true)
+
+
+  <br/>
+
+
 <img width="266" alt="Screenshot 2022-10-22 at 15 00 07" src="https://user-images.githubusercontent.com/105419465/197333497-c1200a0a-6960-43b1-9cc9-15db5f1fa4f1.png">
 <img width="271" alt="Screenshot 2022-10-22 at 15 00 30" src="https://user-images.githubusercontent.com/105419465/197333500-a5aac6db-2302-407b-94d0-92c4b3fdbdc8.png">
 
